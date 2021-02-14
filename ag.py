@@ -5,7 +5,14 @@ def load_scores():
   while line:
     ret.append(int(line))
     line=f.readline()
+  f.close()
   return ret
+
+def save_scores(new_scores):
+  f=open("Agricola_scores", "w")
+  for score in new_scores:
+    f.write("%d\n" % score)
+  f.close()
 
 scores =load_scores()
 print("Hello welcome to the Agricola score keeper")
@@ -19,8 +26,10 @@ while True:
     else:
       print("%r" % scores)
   elif choice=="2":
-    score=input("what is your score")
+    score=input("what is your score ")
+    score=int(score)
     scores.append(score)
+    save_scores(scores)
   else:
     print("What human are you stupid?!?")
 
