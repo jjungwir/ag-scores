@@ -1,4 +1,13 @@
-scores =[]
+def load_scores():
+  ret=[]
+  f=open("Agricola_scores", "r")
+  line=f.readline()
+  while line:
+    ret.append(int(line))
+    line=f.readline()
+  return ret
+
+scores =load_scores()
 print("Hello welcome to the Agricola score keeper")
 
 while True:
