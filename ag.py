@@ -24,7 +24,8 @@ while True:
     if len(scores)==0:
       print("no games yet")
     else:
-      print("%r" % scores)
+      for score in scores:
+        print(score)
   elif choice=="2":
     score=input("what is your score ")
     score=int(score)
@@ -32,4 +33,3 @@ while True:
     save_scores(scores)
   else:
     print("What human are you stupid?!?")
-
